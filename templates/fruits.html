@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% macro fruit(title, url, img, desc) -%}
+<a href="{{ url }}">
+    <img class="fruit-image" src="/img/fruits/{{ img }}"/>
+</a>
+<div>
+    <a href="{{ url }}">{{ title }}</a>
+    <div>{{ desc }}</div>
+</div>
+{%- endmacro %}
+
+{% block content %}
+<h1>פירות לאנשים נורמלים</h1>
+<div class="fruits">
+    {{ fruit("web-ebook.avocadosh.xyz", "https://web-ebook.avocadosh.xyz/", "web-ebook.png",
+    "מוריד כזה עמודים מן הרשת לקינדל וגם לעוד") }}
+
+    {{ fruit("copypastot.avocadosh.xyz", "https://copypastot.avocadosh.xyz/", "copypastot.png",
+    "אוסף מעשיות חלק טובות הרוב פחות") }}
+</div>
+
+<h1>פירות לאינסלים</h1>
+היי חנון :) קודם כל תקרא את כל מה ששלשלתי
+<a href="https://blog.avocadosh.xyz/">כאן</a>
+{% endblock %}

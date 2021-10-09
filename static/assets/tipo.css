@@ -1,0 +1,93 @@
+body {
+  direction: rtl;
+  margin: 0 auto;
+  max-width: 50em;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+.flex-separator {
+  flex-grow: 99;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  font-size: 27px;
+  text-align: center;
+}
+
+.navbar-item {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(200, 207, 213);
+  background: linear-gradient(
+    90deg,
+    rgba(200, 207, 213, 1) 0%,
+    rgba(246, 246, 246, 1) 100%
+  );
+}
+
+.tinanay {
+  height: 60px;
+}
+
+.footer-links {
+  justify-content: center;
+  direction: rtl;
+  display: flex;
+  flex-flow: wrap;
+  column-gap: 1em;
+  background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  animation: pretty-rainbow 1s ease infinite;
+  background-size: 400% 400%;
+  font-size: 1.5em;
+}
+
+.banner {
+  height: min-content;
+}
+
+.wide-image {
+  width: 100%;
+  object-fit: contain;
+}
+
+.content {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 3em;
+  margin-top: 15px;
+}
+
+@keyframes pretty-rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fruits {
+  display: grid;
+  grid-template-columns: 40% auto;
+  width: 100%;
+  gap: 10px;
+}
+
+.fruit-image {
+  width: 100%;
+}

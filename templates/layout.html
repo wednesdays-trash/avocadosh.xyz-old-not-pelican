@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>מאור</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/jpg" href="/img/favicon.png">
+        <link href="/assets/tipo.css" rel="stylesheet">
+        <style>
+         body {
+             background: url('/img/bg.jpg')
+         }
+        </style>
+    </head>
+
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+            your experience.
+            </p>
+        <![endif]-->
+
+        <div class="navbar">
+            <a class="navbar-item" href="/">ראשי</a>
+            <a class="navbar-item" href="/about.html">אודות</a>
+            <a class="navbar-item" href="/last_month_tinanay.html">
+                <img class="tinanay" src="/img/tinanay.png">
+            </a>
+            <a class="navbar-item" href="/fruits.html">פרי ידי</a>
+        </div>
+
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div class="flex-separator"></div>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/ma-or/"> לינקדאין </a>
+                <a href="https://github.com/it-is-wednesday/"> גיטהאב </a>
+                <a href="https://www.last.fm/user/jpegaga"> לאסט פמ </a>
+                <a href="https://www.instagram.com/maror.pashosh/"> אינסטגרם </a>
+                <a href="https://www.opendota.com/players/118991125"> אופן דוטא </a>
+            </div>
+        </footer>
+    </body>
+</html>
