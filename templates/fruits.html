@@ -1,26 +1,69 @@
 {% extends "layout.html" %}
 
-{% macro fruit(title, url, img, desc) -%}
+{% macro fruit(title, url, img, repo, lang, desc) -%}
+{% set lang_name = {"clojure": "קלוז'ר", "python": "🐍🐍🐍", "ocaml": "אוקמל🐪"}[lang] -%}
 <a href="{{ url }}">
     <img class="fruit-image" src="/img/fruits/{{ img }}"/>
 </a>
 <div>
     <a href="{{ url }}">{{ title }}</a>
     <div>{{ desc }}</div>
+    <div class="fruit-language">
+        <span class="dot color-{{ lang }}"></span>
+        <div>{{ lang_name }} | <a href="{{ repo }}">קוד</a></div>
+    </div>
 </div>
 {%- endmacro %}
 
 {% block content %}
 <h1>פירות לאנשים נורמלים</h1>
 <div class="fruits">
-    {{ fruit("web-ebook.avocadosh.xyz", "https://web-ebook.avocadosh.xyz/", "web-ebook.png",
-    "מוריד כזה עמודים מן הרשת לקינדל וגם לעוד") }}
+    {{ fruit(
+        title="web-ebook.avocadosh.xyz",
+        url="https://web-ebook.avocadosh.xyz/",
+        img="web-ebook.png",
+        repo="https://github.com/it-is-wednesday/webpage-to-readable-ebook",
+        lang="clojure",
+        desc="מוריד כזה עמודים מן הרשת לקינדל וגם לעוד") }}
 
-    {{ fruit("copypastot.avocadosh.xyz", "https://copypastot.avocadosh.xyz/", "copypastot.png",
-    "אוסף מעשיות חלק טובות הרוב פחות") }}
+    {{ fruit(
+        title="copypastot.avocadosh.xyz",
+        url="https://copypastot.avocadosh.xyz/",
+        img="copypastot.png",
+        repo="https://github.com/it-is-wednesday/copypastot",
+        lang="clojure",
+        desc="אוסף מעשיות חלק טובות הרוב פחות") }}
+
+    {{ fruit(
+        title="avocadosh.xyz",
+        url="https://avocadosh.xyz",
+        img="avocadosh.png",
+        repo="https://github.com/it-is-wednesday/avocadosh.xyz",
+        lang="python",
+        desc=":)")  }}
 </div>
 
 <h1>פירות לאינסלים</h1>
-היי חנון :) קודם כל תקרא את כל מה ששלשלתי
-<a href="https://blog.avocadosh.xyz/">כאן</a>
+
+<div class="fruits">
+    {{ fruit(
+        title="cute-sway-recorder",
+    url="https://github.com/it-is-wednesday/cute-sway-recorder",
+    img="cute-sway-recorder.png",
+    repo="https://github.com/it-is-wednesday/cute-sway-recorder",
+    lang="python",
+    desc="מקליט מסך גרפי למנהל חלונות סווי בלינוקס בqt"
+    ) }}
+
+    {{ fruit(
+        title="פיצולית",
+        url="https://github.com/it-is-wednesday/pitzulit",
+        img="pitzulit.png",
+        repo="https://github.com/it-is-wednesday/pitzulit",
+        lang="ocaml",
+        desc="
+    מפצל סרטון של אלבום ביוטיוב לקבצים של שירים, דוגרי גיליתי איזה חודש אחרי שסיימתי
+    שמישהו כבר עשה את זה אבל היה כיף אש לכתוב באוגמל
+    ") }}
+</div>
 {% endblock %}

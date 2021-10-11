@@ -49,7 +49,7 @@ html {
   flex-flow: wrap;
   column-gap: 1em;
   background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  animation: pretty-rainbow 1s ease infinite;
+  animation: pretty-rainbow 2s ease infinite;
   background-size: 400% 400%;
   font-size: 1.5em;
 }
@@ -90,4 +90,31 @@ html {
 
 .fruit-image {
   width: 100%;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.color-python {
+  background-color: #3572a5;
+}
+
+.color-clojure {
+  background-color: #db5855;
+}
+
+.color-ocaml {
+  background-color: #3be133
+}
+
+.fruit-language {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  color: dimgray;
 }
