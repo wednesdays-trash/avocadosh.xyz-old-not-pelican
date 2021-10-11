@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 
 {% macro fruit(title, url, img, repo, lang, desc) -%}
-{% set lang_name = {"clojure": "קלוז'ר", "python": "🐍🐍🐍", "ocaml": "אוקמל🐪"}[lang] -%}
+{% set lang_name = {"clojure": "קלוז'ר",
+                    "python": "🐍🐍🐍",
+                    "ocaml": "אוקמל🐪",
+                    "elisp": "אימקס ליספ🦬"}[lang] -%}
 <a href="{{ url }}">
     <img class="fruit-image" src="/img/fruits/{{ img }}"/>
 </a>
@@ -61,9 +64,15 @@
         img="pitzulit.png",
         repo="https://github.com/it-is-wednesday/pitzulit",
         lang="ocaml",
-        desc="
-    מפצל סרטון של אלבום ביוטיוב לקבצים של שירים, דוגרי גיליתי איזה חודש אחרי שסיימתי
-    שמישהו כבר עשה את זה אבל היה כיף אש לכתוב באוגמל
-    ") }}
+        desc="CLI שמפצל סרטונים של אלבומים ביוטיוב לפי התיאור") }}
+
+    {{ fruit(
+        title="eldoc-toml-current-table",
+        url="https://github.com/it-is-wednesday/eldoc-toml-current-table",
+        img="eldoc-toml-current-table.png",
+        repo="https://github.com/it-is-wednesday/eldoc-toml-current-table",
+        lang="elisp",
+        desc="מראה באיזה טבלה את בטומל"
+    ) }}
 </div>
 {% endblock %}

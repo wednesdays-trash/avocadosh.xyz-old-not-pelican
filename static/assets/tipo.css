@@ -111,6 +111,10 @@ html {
   background-color: #3be133
 }
 
+.color-elisp {
+  background-color: #C065DB;
+}
+
 .fruit-language {
   display: flex;
   flex-direction: row;
