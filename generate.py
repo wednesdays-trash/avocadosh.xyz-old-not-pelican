@@ -8,14 +8,16 @@ env = Environment(
 
 def lastfm_collage():
     return requests.get(
-        "https://lastfmtopalbums.dinduks.com/patchwork.php",
+        # https://lastfm-collage.herokuapp.com/collage?username=jpegaga&method=album&period=1month&column=3&row=3&caption=true&scrobble=false
+        "https://lastfm-collage.herokuapp.com/collage",
         params=dict(
-            user="jpegaga",
+            username="jpegaga",
+            method="album",
             period="1month",
-            rows="3",
-            cols="3",
-            imageSize="300",
-            noborder="on",
+            column="3",
+            row="3",
+            caption="true",
+            scrobble="false"
         ),
     ).content
 
