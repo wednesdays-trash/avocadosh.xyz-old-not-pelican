@@ -58,15 +58,5 @@ def generate_collage():
         album_img = art_with_text(album)
         img.paste(album_img, (x * IMAGE_EDGE_SIZE, y * IMAGE_EDGE_SIZE))
 
-    return img
-
-
-
-
-
-
-
-
-
-
-
+    # from dust we came and to dust we will return
+    return img.convert("RGB")
