@@ -32,7 +32,7 @@ def text_overlay(text: str, base_size: Tuple[int, int]) -> Image.Image:
     rect = Image.new("RGBA", base_size, (255, 255, 255, 0))
 
     draw = ImageDraw.Draw(rect)
-    draw.rectangle((0, 0, base_size[0], height), fill=(0, 0, 0, 128))
+    draw.rectangle((0, 0, base_size[0], height), fill=(0, 0, 0, 180))
     draw.text((0, 0), text, font=fnt)
 
     return rect
@@ -54,7 +54,7 @@ def generate_collage():
     print("Fetching albums...")
     # place covers in (0, 300), (0, 600), (0, 900), (300, 0) ...
     for album, (x, y) in zip(fetch_albums(), product(range(3), range(3))):
-        print(album, x, y)
+        print(album)
         album_img = art_with_text(album)
         img.paste(album_img, (x * IMAGE_EDGE_SIZE, y * IMAGE_EDGE_SIZE))
 
