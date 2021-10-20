@@ -1,3 +1,4 @@
 static/*.html
 __pycache__
 /static/img/lastfm-collage.jpg
+.env

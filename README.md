@@ -6,3 +6,4 @@ SHELL=/bin/sh
 0 * * * * www-data cd /var/www/avocadosh.xyz && /usr/local/bin/poetry run python generate.py
 ```
 
+Also a `.env` file needs to be present with LASTFM_API_KEY and LASTFM_API_SECRET
