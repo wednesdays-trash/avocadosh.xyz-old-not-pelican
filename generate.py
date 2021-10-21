@@ -1,3 +1,5 @@
+import sys
+
 from dotenv import load_dotenv
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -11,7 +13,8 @@ env = Environment(
 
 
 if __name__ == "__main__":
-    generate_collage().save("./static/img/lastfm-collage.jpg", quality=85)
+    if not "--no-collage" in sys.argv:
+        generate_collage().save("./static/img/lastfm-collage.jpg", quality=85)
 
     for template_name in env.list_templates():
         template = env.get_template(template_name)
