@@ -7,6 +7,7 @@ generate:
 
 generate-cv:
     just -f pandoc-cv/Justfile all
+    cp pandoc-cv/output/* static/
 
 watch:
     python -m http.server --directory static
