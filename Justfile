@@ -1,11 +1,13 @@
 alias gen := generate
 
+all: generate generate-cv
+
 generate:
     poetry run python generate.py
 
-watch:
-    just serve &
-    watchexec "poetry run python generate.py --no-collage"
+generate-cv:
+    just -f pandoc-cv/Justfile all
 
-serve:
+watch:
     python -m http.server --directory static
+    watchexec "poetry run python generate.py --no-collage"
