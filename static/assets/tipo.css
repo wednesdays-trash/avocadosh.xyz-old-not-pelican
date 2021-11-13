@@ -106,11 +106,11 @@ html {
 }
 
 .color-ocaml {
-  background-color: #3be133
+  background-color: #3be133;
 }
 
 .color-elisp {
-  background-color: #C065DB;
+  background-color: #c065db;
 }
 
 .fruit-language {
@@ -119,4 +119,8 @@ html {
   align-items: center;
   gap: 5px;
   color: dimgray;
+}
+
+.center {
+  margin: 0 auto;
 }
