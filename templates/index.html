@@ -1,12 +1,66 @@
 {% extends "layout.html" %}
 
+{% macro fruit(url, title, desc, lang) -%}
+{% set lang_name = {"clojure": "clojure", "python": "snake", "ocaml": "ocaml🐪", "elisp": "emacs lisp🦬"}[lang] -%}
+<li style="margin-top: 15px">
+    <div> <a href="{{ url }}">{{ title }}</a> </div>
+    {% autoescape false %}
+    <div>{{ desc }}</div>
+    {% endautoescape %}
+    <div><span class="dot color-{{ lang }}"></span> {{ lang_name }}</div>
+</li>
+{%- endmacro %}
+
 {% block content %}
-<a href="/fruits.html">כל הדברים שעשיתי מאהבה</a>
-<div>
-    <a href="/resume.html">כל הדברים שעשיתי בשביל לאכול</a>
-    (יש גם
-    <a href="/resume.pdf">pdf</a>
-    ו<a href="/resume.docx">docx</a>)
-</div>
+<img class="wide-image" src="/img/worthless.png">
+
+<h1>BIG WHIPS, BIG GUNS</h1>
+<ul>
+    {{ fruit(
+    "https://web-ebook.avocadosh.xyz/",
+    "web-ebook.avocadosh.xyz",
+    """web serivce for downloading webpages as <i>readable</i> epub/mobi/pdf files, like, without
+    your usual website clutter""",
+    "clojure") }}
+
+    {{ fruit(
+    "https://copypastot.avocadosh.xyz/",
+    "copypastot.avocadosh.xyz",
+    "shitty hebrew copypasta database",
+    "clojure") }}
+
+    {{ fruit(
+    "https://github.com/it-is-wednesday/cute-sway-recorder",
+    "cute-sway-recorder",
+    "graphical screen recorder for sway and other <code>wl-roots</code>-based window managers",
+    "python"
+    ) }}
+
+    {{ fruit(
+    "https://github.com/it-is-wednesday/pitzulit",
+    "pitzulit",
+    "extract youtube albums into separate track files by timestamps in the description",
+    "ocaml"
+    ) }}
+
+    {{ fruit(
+    "https://github.com/it-is-wednesday/pyinspect.el",
+    "pyinspect.el",
+    "inspect object fields in running python process",
+    "elisp"
+    ) }}
+</ul>
+
+<h1>NO CASH, NO FUNDS</h1>
+<div> <a href="/resume.html">my cv in html</a> </div>
+<div> <a href="/resume.pdf">my cv in pdf</a> </div>
+<div> <a href="/resume.docx">my cv in docx</a> </div>
+
+<h1>HURRY UP, IT’S DONE</h1>
+last month
+<img class="wide-image" src="/img/lastfm-collage.jpg">
+
+<h1>YOU ARE ALL MY SONS</h1>
+
 <img class="wide-image" src="/img/cat-on-spikes.jpg">
 {% endblock %}
