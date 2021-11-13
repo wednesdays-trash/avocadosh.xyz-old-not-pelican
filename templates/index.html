@@ -61,10 +61,12 @@ last month
 <img class="wide-image" src="/img/lastfm-collage.jpg">
 
 <h1>YOU ARE ALL MY SONS</h1>
-refresh the page then
-<img class="wide-image" id="coolpic">
+<img class="wide-image" id="coolpic" onclick="newCoolPic()">
 <script>
- pic = document.getElementById("coolpic");
- pic.src = `/img/coolpics/${Math.floor(Math.random() * 39)}.jpg`;
+ function newCoolPic() {
+     pic = document.getElementById("coolpic");
+     pic.src = `/img/coolpics/${Math.floor(Math.random() * 39)}.jpg`;
+ }
+ newCoolPic()
 </script>
 {% endblock %}
