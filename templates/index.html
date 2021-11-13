@@ -12,14 +12,16 @@
 {%- endmacro %}
 
 {% block content %}
-<img class="wide-image" src="/img/worthless.png">
+<div style="display: flex">
+    <img class="wide-image center" style="max-width: 578px" src="/img/tech.png">
+</div>
 
 <h1>BIG WHIPS, BIG GUNS</h1>
 <ul>
     {{ fruit(
     "https://web-ebook.avocadosh.xyz/",
     "web-ebook.avocadosh.xyz",
-    """web serivce for downloading webpages as <i>readable</i> epub/mobi/pdf files, like, without
+    """web service for downloading webpages as <i>readable</i> epub/mobi/pdf files, like, without
     your usual website clutter""",
     "clojure") }}
 
