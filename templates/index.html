@@ -61,14 +61,4 @@
 <h1>HURRY UP, IT’S DONE</h1>
 last month
 <img class="wide-image" src="/img/lastfm-collage.jpg">
-
-<h1>YOU ARE ALL MY SONS</h1>
-<img class="wide-image" id="coolpic" onclick="newCoolPic()">
-<script>
- function newCoolPic() {
-     pic = document.getElementById("coolpic");
-     pic.src = `/img/coolpics/${Math.floor(Math.random() * 39)}.jpg`;
- }
- newCoolPic()
-</script>
 {% endblock %}
