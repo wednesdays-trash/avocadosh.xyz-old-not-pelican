@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% macro fruit(url, title, desc, lang) -%}
-{% set lang_name = {"clojure": "clojure", "python": "snake", "ocaml": "ocaml🐪", "elisp": "emacs lisp🦬"}[lang] -%}
+{% set lang_name = {"clojure": "clojure", "python": "🐍", "ocaml": "ocaml🐪", "elisp": "emacs lisp🦬"}[lang] -%}
 <li style="margin-top: 15px">
     <div> <a href="{{ url }}">{{ title }}</a> </div>
     {% autoescape false %}
@@ -30,13 +30,13 @@
     {{ fruit(
     "https://copypastot.avocadosh.xyz/",
     "copypastot.avocadosh.xyz",
-    "shitty hebrew copypasta database",
+    "edgy hebrew copypasta database",
     "clojure") }}
 
     {{ fruit(
     "https://github.com/it-is-wednesday/cute-sway-recorder",
     "cute-sway-recorder",
-    "graphical screen recorder for sway and other <code>wl-roots</code>-based window managers",
+    "graphical screen recorder for sway and other <code>wlroots</code>-based window managers",
     "python"
     ) }}
 
@@ -57,8 +57,7 @@
     {{ fruit(
     "gemini://avocadosh.xyz",
     "gemini://avocadosh.xyz",
-    'hidden gems for
-    <a href="https://gemini.circumlunar.space/docs/faq.gmi">geminis</a>') }}
+    '<a href="https://gemini.circumlunar.space/docs/faq.gmi">and all the famous rappers got a sign like me </a>') }}
 
     {{ fruit(
     "https://blog.avocadosh.xyz",
