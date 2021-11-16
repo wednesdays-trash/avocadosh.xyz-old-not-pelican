@@ -46,14 +46,17 @@ h1 {
   height: 60px;
 }
 
-.footer-links {
+.rainbow {
+  background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  animation: pretty-rainbow 2s ease infinite;
+  background-size: 400% 400%;
+}
+
+.header-links {
   justify-content: center;
   display: flex;
   flex-flow: wrap;
   column-gap: 1em;
-  background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  animation: pretty-rainbow 2s ease infinite;
-  background-size: 400% 400%;
   font-size: 1.5em;
 }
 
