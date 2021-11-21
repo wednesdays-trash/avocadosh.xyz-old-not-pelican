@@ -23,34 +23,21 @@
             your experience.
             </p>
         <![endif]-->
-        <div class="header-links rainbow">
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <div class="flex-separator"></div>
+
+        <img style="padding: 5%" src="/img/worthless.png">
+
+        <div class="footer-links rainbow">
             <a href="https://www.linkedin.com/in/ma-or/">linkedin</a>
             <a href="https://github.com/it-is-wednesday/">github</a>
             <a href="https://www.last.fm/user/jpegaga">last.fm</a>
             <a href="https://www.instagram.com/maror.pashosh/">instagram</a>
             <a href="https://www.opendota.com/players/118991125">opendota</a>
         </div>
-        <div class="content">
-            {% block content %}
-            {% endblock %}
-
-        </div>
-
-        <div class="flex-separator"></div>
-
-        <img style="padding: 5%" src="/img/worthless.png">
     </body>
-
-    <footer class="center" style="padding: 3px">
-        <div class="rainbow footer-link-div">
-            <a href="gemini://avocadosh.xyz">
-                and all the famous rappers got a sign like me
-            </a>
-        </div>
-        <div class="rainbow footer-link-div">
-            <a href="https://github.com/it-is-wednesday/avocadosh.xyz">
-                source code for this website
-            </a>
-        </div>
-    </footer>
 </html>
