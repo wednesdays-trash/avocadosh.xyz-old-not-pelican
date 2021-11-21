@@ -20,8 +20,15 @@ def fetch_albums() -> List[Album]:
     api_key = os.getenv("LASTFM_API_KEY")
     api_secret = os.getenv("LASTFM_API_SECRET")
     network = pylast.LastFMNetwork(api_key, api_secret)
-    items = network.get_user("jpegaga").get_top_albums(pylast.PERIOD_1MONTH, limit=9)
-    return [item.item for item in items]
+    # despite only needing 9 albums for the collage, we'll fetch a bit more so we can discard
+    # albums with no album art and just draw the next album instead
+    items = network.get_user("jpegaga").get_top_albums(pylast.PERIOD_1MONTH, limit=15)
+
+    # yield all items with a non-None album art
+    for item in items:
+        if item.item.info["image"][0] is None:
+            continue
+        yield item.item
 
 
 def fetch_cover(album: Album) -> Image.Image:
