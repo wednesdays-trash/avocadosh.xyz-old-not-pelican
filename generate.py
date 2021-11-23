@@ -17,10 +17,10 @@ if __name__ == "__main__":
         generate_collage().save("./static/img/lastfm-collage.jpg", quality=85)
 
     for template_name in env.list_templates():
-        if template_name == "layout.html":
+        if template_name == "layout.html.jinja2":
             continue
 
         template = env.get_template(template_name)
 
-        with open(f"static/{template_name}", "w") as f:
+        with open(f"static/{template_name.replace('.jinja2', '')}", "w") as f:
             f.write(template.render())
