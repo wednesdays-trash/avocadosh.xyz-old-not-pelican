@@ -2,7 +2,7 @@
 
 ----
 
-> Ah
+> hi
 
 ----
 
@@ -12,9 +12,8 @@ Experience
 2020-2022
 : **Monitoring-related scripting and Sysadmin at Mamram**
 
-  * Set up & maintained Splunk-based monitoring agents (namely Telegraf and Collectd), deployed via
-    Ansible
-  * Complementing Python scripts for the monitoring agents
+  * Set up & maintained Telegraf and Collectd monitoring agents feeding data to Splunk, deployed via Ansible
+  * Complementing Python and PowerShell scripts for the monitoring agents
   * A wide array of Splunk dashboards, Splunk SPL with heavy macro usage
   
 2020-2021
@@ -31,7 +30,7 @@ Experience
 2017
 : **PHP Developer at DataCheck**
 
-  * Worked with SOAP APIs
+  * Glued SOAP APIs together
 
 Education
 ---------
