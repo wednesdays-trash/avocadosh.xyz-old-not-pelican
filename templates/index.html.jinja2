@@ -1,77 +1,74 @@
 {% extends "layout.html.jinja2" %}
 
 {% macro fruit(url, title, desc, lang) -%}
-{% set lang_name = {"clojure": "clojure", "python": "🐍", "ocaml": "ocaml🐪", "elisp": "emacs lisp🦬"}[lang] -%}
-<li style="margin-top: 15px">
-    <div> <a href="{{ url }}">{{ title }}</a> </div>
-    {% autoescape false %}
-    <div>{{ desc }}</div>
-    {% endautoescape %}
-    {% if lang %}
-    <div><span class="dot color-{{ lang }}"></span> {{ lang_name }}</div>
-    {% endif %}
-</li>
+    {% set lang_name = {"clojure": "clojure", "python": "🐍", "ocaml": "ocaml🐪", "elisp": "emacs lisp🦬"}[lang] -%}
+    <li style="margin-top: 15px">
+        <div> <a href="{{ url }}">{{ title }}</a> </div>
+        {% autoescape false %}
+            <div>{{ desc }}</div>
+        {% endautoescape %}
+        {% if lang %}
+            <div><span class="dot color-{{ lang }}"></span> {{ lang_name }}</div>
+        {% endif %}
+    </li>
 {%- endmacro %}
 
 {% block content %}
-<div class="walked-inland">
-    <div>I walked inland with water pouring out of my suitcase</div>
-    <div>It was heavy so I dumped it out and stuck all the plastic bags back in</div>
-    <div>The time was probably around two</div>
-    <div>I had spent quite a while trying to decide on the water filtration system</div>
-</div>
-<h1>little zodiac, ginger snap</h1>
-<ul>
-    {{ fruit(
-    "https://github.com/it-is-wednesday/pitzulit",
-    "pitzulit",
-    "extracts youtube albums into separate track files according to timestamps in the description",
-    "ocaml"
-    ) }}
+    <div class="walked-inland">
+        <div>I walked inland with water pouring out of my suitcase</div>
+        <div>It was heavy so I dumped it out and stuck all the plastic bags back in</div>
+        <div>The time was probably around two</div>
+        <div>I had spent quite a while trying to decide on the water filtration system</div>
+    </div>
+    <ul>
+        {{ fruit(
+            "https://github.com/it-is-wednesday/pitzulit",
+            "pitzulit",
+            "extracts youtube albums into separate track files according to timestamps in the description",
+            "ocaml"
+        ) }}
 
-    {{ fruit(
-    "https://github.com/it-is-wednesday/cute-sway-recorder",
-    "cute-sway-recorder",
-    "graphical screen recorder for sway and other <code>wlroots</code>-based window managers",
-    "python"
-    ) }}
+        {{ fruit(
+            "https://github.com/it-is-wednesday/cute-sway-recorder",
+            "cute-sway-recorder",
+            "graphical screen recorder for sway and other <code>wlroots</code>-based window managers",
+            "python"
+        ) }}
 
-    {{ fruit(
-    "https://web-ebook.avocadosh.xyz/",
-    "web-ebook.avocadosh.xyz",
-    """converts webpages into <i>readable</i> epub/mobi/pdf files. like, removes the usual webshit clutter""",
-    "clojure") }}
+        {{ fruit(
+            "https://web-ebook.avocadosh.xyz/",
+            "web-ebook.avocadosh.xyz",
+            """converts webpages into <i>readable</i> epub/mobi/pdf files. like, removes the usual webshit clutter""",
+            "clojure") }}
 
-    {{ fruit(
-    "https://github.com/it-is-wednesday/pyinspect.el",
-    "pyinspect.el",
-    "inspects object fields in running python process",
-    "elisp"
-    ) }}
+        {{ fruit(
+            "https://github.com/it-is-wednesday/pyinspect.el",
+            "pyinspect.el",
+            "inspects object fields in running python process",
+            "elisp"
+        ) }}
 
-    {{ fruit(
-    "https://copypastot.avocadosh.xyz/",
-    "copypastot.avocadosh.xyz",
-    "edgy hebrew copypasta database",
-    "clojure") }}
+        {{ fruit(
+            "https://copypastot.avocadosh.xyz/",
+            "copypastot.avocadosh.xyz",
+            "edgy hebrew copypasta database",
+            "clojure") }}
 
-    {{ fruit(
-    "https://blog.avocadosh.xyz",
-    "blog.avocadosh.xyz",
-    "terrible takes") }}
-</ul>
+        {{ fruit(
+            "https://blog.avocadosh.xyz",
+            "blog.avocadosh.xyz",
+            "terrible takes") }}
+    </ul>
 
-<h1>pretty little shorty with the snapback</h1>
-<div> <a href="/resume.pdf">cv</a> </div>
+    <div> <a href="/resume.pdf">cv</a> </div>
 
-<!--
-     Add these back when my resume isn't awkward anymore
+    <!--
+         Add these back when my resume isn't awkward anymore
 
-     <div> <a href="/resume.html">my cv in html</a> </div>
-     <div> <a href="/resume.pdf">my cv in pdf</a> </div>
-     <div> <a href="/resume.docx">my cv in docx</a> </div>
--->
-<h1>tarot deck, ankh set</h1>
-<img class="wide-image" src="/img/lastfm-collage.jpg">
-🕥 last month
+         <div> <a href="/resume.html">my cv in html</a> </div>
+         <div> <a href="/resume.pdf">my cv in pdf</a> </div>
+         <div> <a href="/resume.docx">my cv in docx</a> </div>
+    -->
+    <img class="wide-image" src="/img/lastfm-collage.jpg">
+    🕥 last month
 {% endblock %}
