@@ -75,8 +75,6 @@ def overlay(text: str) -> Image.Image:
 def generate_collage(albums: Iterable[Album]):
     result_img = Image.new("RGBA", (3 * IMAGE_EDGE_SIZE, 3 * IMAGE_EDGE_SIZE))
 
-    print("Fetching albums...")
-
     # place covers in (0, 300), (0, 600), (0, 900), (300, 0) ...
     for album, (x, y) in zip(albums, product(range(3), range(3))):
         base_cover = album.cover_art
