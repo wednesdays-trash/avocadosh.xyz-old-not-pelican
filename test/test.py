@@ -16,4 +16,4 @@ art = Image.open("test/sample-art.jpg").convert("RGBA")
 generate_collage(
     Album(title=random_string(), artist=random_string(), cover_art=art)
     for _ in range(9)
-).save("./output/test.jpg", quality=85)
+).save("./test/output.webp", quality=80)

@@ -14,7 +14,7 @@ env = Environment(
 
 if __name__ == "__main__":
     if not "--no-collage" in sys.argv:
-        generate_collage(fetch_albums()).save("./static/img/lastfm-collage.jpg", quality=85)
+        generate_collage(fetch_albums()).save("./static/img/lastfm-collage.webp", quality=80)
 
     for template_name in env.list_templates():
         if template_name == "layout.html.jinja2":

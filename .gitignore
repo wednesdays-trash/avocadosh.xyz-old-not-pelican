@@ -1,5 +1,6 @@
 static/*.html
 __pycache__
-/static/img/lastfm-collage.jpg
+test/output.webp
+/static/img/lastfm-collage.webp
 /static/resume*
 .env
