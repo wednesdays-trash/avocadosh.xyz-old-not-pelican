@@ -1,21 +1,30 @@
 import os
 from itertools import product
-from typing import List
+from typing import Iterable, List
 from urllib.request import urlopen
+from dataclasses import dataclass
 
 import pylast
 from PIL import Image, ImageDraw, ImageFont
-from pylast import Album
 
 IMAGE_EDGE_SIZE = 300
 TEXT_BG_BOTTOM_PADDING = 5
 FONT_SIZE = 15
 
 
+@dataclass
+class Album:
+    title: str
+    artist: str
+    cover_art: Image.Image
+
+
 def fetch_albums() -> List[Album]:
     """
     Fetch my 9 most listened albums from the past month
     Expects LASTFM_API_KEY and LASTFM_API_SECRET env vars
+
+    This is the module's interface with the outer world; the rest of it is free of side effects
     """
     api_key = os.getenv("LASTFM_API_KEY")
     api_secret = os.getenv("LASTFM_API_SECRET")
@@ -26,20 +35,23 @@ def fetch_albums() -> List[Album]:
 
     # yield all items with a non-None album art
     for item in items:
-        if item.item.info["image"][0] is None:
+        alb: pylast.Album = item.item
+
+        print(f'Fetching "{alb.title}" by {alb.artist}')
+
+        if (
+            alb.info["image"][0] is None
+            or alb.artist is None
+            or alb.artist.name is None
+            or alb.title is None
+        ):
             continue
-        yield item.item
 
-
-def fetch_cover(album: Album) -> Image.Image:
-    "Download the album's cover image and return a Pillow Image of it"
-    return Image.open(urlopen(album.get_cover_image())).convert("RGBA")
-
-
-def overlay_text(album: Album) -> str:
-    "Returns the string to be written on the album overlay"
-    artist = album.artist.name if album.artist and album.artist.name else ""
-    return f"{album.title or ''}\n{artist}"
+        yield Album(
+            title=alb.title,
+            artist=alb.artist.name,
+            cover_art=Image.open(urlopen(alb.get_cover_image())).convert("RGBA"),
+        )
 
 
 def overlay(text: str) -> Image.Image:
@@ -60,18 +72,16 @@ def overlay(text: str) -> Image.Image:
     return rect
 
 
-def generate_collage():
+def generate_collage(albums: Iterable[Album]):
     result_img = Image.new("RGBA", (3 * IMAGE_EDGE_SIZE, 3 * IMAGE_EDGE_SIZE))
 
     print("Fetching albums...")
 
     # place covers in (0, 300), (0, 600), (0, 900), (300, 0) ...
-    for album, (x, y) in zip(fetch_albums(), product(range(3), range(3))):
-        print(album)
-
-        base_cover = fetch_cover(album)
-        album_label = overlay_text(album)
-        img = Image.alpha_composite(base_cover, overlay(album_label))
+    for album, (x, y) in zip(albums, product(range(3), range(3))):
+        base_cover = album.cover_art
+        label = f"{album.title}\n{album.artist}"
+        img = Image.alpha_composite(base_cover, overlay(label))
 
         result_img.paste(img, (x * IMAGE_EDGE_SIZE, y * IMAGE_EDGE_SIZE))
 

@@ -3,7 +3,7 @@ import sys
 from dotenv import load_dotenv
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from collage import generate_collage
+from collage import generate_collage, fetch_albums
 
 load_dotenv()
 
@@ -14,7 +14,7 @@ env = Environment(
 
 if __name__ == "__main__":
     if not "--no-collage" in sys.argv:
-        generate_collage().save("./static/img/lastfm-collage.jpg", quality=85)
+        generate_collage(fetch_albums()).save("./static/img/lastfm-collage.jpg", quality=85)
 
     for template_name in env.list_templates():
         if template_name == "layout.html.jinja2":
