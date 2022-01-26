@@ -4,7 +4,7 @@
 
 #+begin_quote
 Tel Aviv · [[mailto:me@avocadosh.xyz][me@avocadosh.xyz]]\\
-System Administrator and Fullstack Developer specialized in *Python*, *GNU/Linux*, and *Splunk*
+System Administrator & Fullstack Developer specialized in *Python*, *GNU/Linux*, and *Splunk*
 #+end_quote
 
 --------------
