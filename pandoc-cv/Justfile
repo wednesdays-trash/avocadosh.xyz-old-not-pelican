@@ -14,9 +14,9 @@ pdf:
     @echo {{FILE_NAME}}.pdf
 
     pandoc --standalone --template {{STYLES_DIR}}/{{STYLE}}.tex \
-        --from markdown --to context \
+        --from org --to context \
         --variable papersize=A4 \
-        --output {{TMP_DIR}}/{{FILE_NAME}}.tex {{FILE_NAME}}.md > /dev/null
+        --output {{TMP_DIR}}/{{FILE_NAME}}.tex {{FILE_NAME}}.org > /dev/null
 
     mtxrun --path={{TMP_DIR}} \
            --result={{FILE_NAME}}.pdf \
@@ -27,17 +27,17 @@ pdf:
 html:
     @echo {{FILE_NAME}}.html
 
-    pandoc {{FILE_NAME}}.md --standalone \
+    pandoc {{FILE_NAME}}.org --standalone \
         --include-in-header {{STYLES_DIR}}/{{STYLE}}.css \
         --lua-filter={{STYLES_DIR}}/pdc-links-target-blank.lua \
-        --from markdown --to html \
+        --from org --to html \
         --output {{OUT_DIR}}/{{FILE_NAME}}.html \
         --metadata pagetitle={{FILE_NAME}}
 
 docx:
     @echo {{FILE_NAME}}.docx
 
-    pandoc --standalone {{FILE_NAME}}.md --output {{OUT_DIR}}/{{FILE_NAME}}.docx
+    pandoc --standalone {{FILE_NAME}}.org --output {{OUT_DIR}}/{{FILE_NAME}}.docx
 
 watch:
-    watchexec --ignore output "just pdf"
+    watchexec --ignore output "just setup pdf"
