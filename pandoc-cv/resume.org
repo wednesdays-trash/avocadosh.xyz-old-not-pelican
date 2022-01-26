@@ -41,6 +41,6 @@ System Administrator & Fullstack Developer specialized in *Python*, *GNU/Linux*,
 ** Hobby Programming
 I show great interest in niche programming languages and techniques. In
 addition to Python, I have developed a couple of tools in OCaml, Clojure, and
-Emacs Lisp. They are listed under my GitHub page or on my personal website:
+Emacs Lisp. They are listed under my GitHub page and on my personal website:
 - https://github.com/it-is-wednesday/
 - https://avocadosh.xyz
