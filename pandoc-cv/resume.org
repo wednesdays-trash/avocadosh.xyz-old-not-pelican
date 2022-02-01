@@ -14,20 +14,20 @@ System Administrator & Fullstack Developer specialized in *Python*, *GNU/Linux*,
   - *Splunk* project involving SPL and *macros* reused across tens of dashboards
   - Deploying and maintaining *Telegraf* and *Collectd* agents on both *GNU/Linux* and *Windows*
   - Maintainment of agent configuration via *Ansible* across hundreds of servers
-  - Hand-written Python agents using *psutil*
+  - Development of custom Python agents using *psutil*
   - Complementory Python and *PowerShell* scripts for the monitoring agents
 
-- 2020-2021 :: *Fullstack developer at Disputec*
+- 2020-2021 :: *Fullstack Developer at Disputec*
   - Kotlin backend
   - OpenAPI
   - Vue + Typescript
 
-- 2019-2021 :: *Fullstack developer at Mamram*
+- 2019-2021 :: *Fullstack Developer at Mamram*
   - Monitoring application
   - NodeJS + Express
   - Angular
 
-- 2018 :: *Python scripting at Ubimo*
+- 2018 :: *Python Developmer at Ubimo*
   - Web scraping using BeautifulSoup, Requests, and Selenium
 
 - 2017 :: *PHP Developer at DataCheck*
@@ -39,8 +39,8 @@ System Administrator & Fullstack Developer specialized in *Python*, *GNU/Linux*,
   College
 
 ** Hobby Programming
-I show great interest in niche programming languages and techniques. In
-addition to Python, I have developed a couple of tools in OCaml, Clojure, and
-Emacs Lisp. They are listed under my GitHub page and on my personal website:
+I enjoy fiddling with niche programming languages and techniques :) In addition to
+Python, I have developed a couple of tools in OCaml, Clojure, and Emacs Lisp.
+They are listed under my GitHub page and on my personal website:
 - https://github.com/it-is-wednesday/
 - https://avocadosh.xyz

@@ -138,3 +138,10 @@ h1 {
   display: flex;
   flex-direction: column;
 }
+
+.horizontal-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 16px;
+}
