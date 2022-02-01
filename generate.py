@@ -24,3 +24,5 @@ if __name__ == "__main__":
 
         with open(f"static/{template_name.replace('.jinja2', '')}", "w") as f:
             f.write(template.render())
+
+        print(f"Generated {template.name}")
